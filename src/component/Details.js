@@ -4,8 +4,8 @@ class Details extends Component {
     render() {
         return (
             <div>
-                <div className="row">
-                    details
+                <div className="roww">
+                    <h1>Test</h1>detailshkhkh
                 </div>
             </div>
         );

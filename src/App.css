@@ -1,0 +1,24 @@
+:root{
+    --primaryColor:#2196f3;
+    --primaryRGBA:rgba(0,0,0,0.3);
+    --mainGrey:#fafafa;
+    --darkGrey:#5f5e5e;
+    --mainWhite:#fff;
+    --mainYellow:#fbc02d;
+    --mainBlack:#222;
+    --mainTransition: all 0.3s ease-in-out;
+    --mainSpacing:0.3em;
+}
+body{
+    background-color: var(--mainGrey) !important;
+    color:var(--mainBlack)
+
+}
+.text-title{
+    letter-spacing: var(--mainSpacing);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.text-main{
+    color:var(--primaryColor);
+}

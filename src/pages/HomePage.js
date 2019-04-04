@@ -7,7 +7,7 @@ const HomePage = () => {
             <ProductConsumer>
             {value=>{
                 return (
-                    <h1>{value}</h1>
+                    <h1>{value.cartItems}</h1>
                 )
             }}
             </ProductConsumer>

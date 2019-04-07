@@ -15,7 +15,7 @@ const Navbar = () => {
                         <FaBars className="nav-icon" onClick={handleSidebar}/>
                         <img src={Logo} alt="logo"/>
                         <div className="nav-cart">
-                        <FaCartPlus className="nav-icon" onCLick={handleCart}></FaCartPlus>
+                        <FaCartPlus className="nav-icon" onClick={handleCart}></FaCartPlus>
                             <div className="cart-items">{cartItems}</div>
                         </div>
                         </div>
@@ -33,6 +33,7 @@ width:100%;
 padding:1rem 1.5rem;
 background:var(--mainGrey);
 border-bottom:3px solid var(--primaryColor);
+z-index:1;
 .nav-center{
     display:flex;
     align-items:center;

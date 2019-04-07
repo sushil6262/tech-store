@@ -7,7 +7,7 @@ export const linkData =[
     {
         id:2,
         text:'about',
-        path:'/'
+        path:'/about'
     },
     {
         id:3,

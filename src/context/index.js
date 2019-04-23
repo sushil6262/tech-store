@@ -1,18 +1,74 @@
 import React, { Component } from 'react';
 import {linkData} from './linkData'
-
+import {socialData} from './socialData'
+import {items} from './productData'
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
     state={
         sidebarOpen:false,
         cartOpen:false,
-        cartItems:2,
         links:linkData,
-        cart:[]
+        cart:[],
+        socialIcons:socialData,
+        cartItems:0,
+        cartSubTotal:0,
+        cartTax:0,
+        cartTotal:0,
+        storeProducts:[],
+        filteredProducts:[],
+        singleProduct:{},
+        loading:true,
+        featuredProducts:[]
     }
 
-    handleSidebar=()=>{
+
+    
+    componentDidMount(){
+        this.setProducts(items)
+    }
+    setProducts=(products)=>{
+        let storeProducts = products.map(item=>{
+            const {id} =item.sys;
+            const image = item.fields.image.fields.file.url
+            const product = {id,...item.fields,image};
+            return product;
+        });
+        let featuredProducts = storeProducts.filter(item=>item.featured=== true);
+
+        this.setState({
+            storeProducts,
+            filteredProducts:storeProducts,
+            featuredProducts,
+            cart:this.getStorageCart(),
+            singleProduct:this.getStorageProduct(),
+        })
+    }
+
+    getStorageCart=()=>{
+        return [];
+    }
+    getStorageProduct=()=>{
+        return [];
+    }
+
+    getTotals=()=>{
+
+    }
+    addTotals=()=>{
+
+    }
+    syncStorage=()=>{
+
+    }
+
+    addToCart=(id)=>{
+        console.log(`add to cart ${id}`);
+    }
+    setSingleProduct=(id)=>{
+        console.log(`set single product ${id}`);
+    }
+        handleSidebar=()=>{
         this.setState({
             sidebarOpen:!this.state.sidebarOpen
         })
@@ -38,7 +94,9 @@ class ProductProvider extends Component {
                 handleSidebar:this.handleSidebar,
                 handleCart:this.handleCart,
                 closeCart:this.closeCart,
-                openCart:this.openCart
+                openCart:this.openCart,
+                addToCart:this.addToCart,
+                setSingleProduct:this.setSingleProduct,
             }}>
                 {this.props.children}
             </ProductContext.Provider>

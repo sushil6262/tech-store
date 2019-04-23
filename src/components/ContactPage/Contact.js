@@ -4,7 +4,7 @@ import Title from "../Title";
 const Contact = () => {
     return (
         <section className="py-5">
-            <div className="row">
+            <div className="row m-0">
                 <div className="col-10 mx-auto col-md-6 my-3">
                 <Title title="Contact Us"/>
                     <form className="mt-5" action="https://formspree.io/aadisrma26@gmail.com" method="POST">
